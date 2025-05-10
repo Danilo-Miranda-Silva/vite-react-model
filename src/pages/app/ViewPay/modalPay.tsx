@@ -39,7 +39,10 @@ export const ModalPay = ({ pedido, onClose }: ModalProps) => {
           </ul>
         </div>
         <p className="p-description p-order">
-          <strong>Total: </strong>R${pedido.total}
+          <strong>Total: </strong>R$ {new Intl.NumberFormat('pt-BR', {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2
+                }).format(pedido.total)}
         </p>
 
         <div className="ct-btn">

@@ -1,6 +1,4 @@
 * {
-    margin:0;
-    padding: 0;
     font-family: Helvetica;
     box-sizing: border-box;
     background: #28282d;
@@ -21,9 +19,6 @@
     padding: 60px;
     border-radius: 10px;
 }
-
-
-
 
 .container h1 {
     text-align: center;
@@ -98,8 +93,8 @@
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 600px;
+    font-size: 20px;
+    font-weight: 800px;
     
 }
 
@@ -109,6 +104,12 @@
     margin: 20PX 0 10PX;
     text-shadow: none;
     color: white
+}
+
+.container button:hover {
+    background-color:rgb(224, 224, 224);
+    color: #28282d;
+    transition: 0.3s ease-in-out;
 }
 
 .logo {

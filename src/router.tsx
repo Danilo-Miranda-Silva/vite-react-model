@@ -1,28 +1,27 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { NotFound } from "./pages/404";
 import SignIn from "./pages/auth/sign-in";
 import { Login } from "./pages/app/dashLogin/login";
 import { Orders } from "./pages/app/orders/orders";
-import { Home } from "./pages/app/orders/home";
+import { Home } from "./pages/app/home/home";
 import { ViewTbPay } from "./pages/app/ViewPay/viewPay";
 
 export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,  // Página inicial
-    errorElement: <NotFound />,  // Caso a rota não seja encontrada
-  },
-  {
-    path: "/login",  // Caminho para Login
+    {
+    path: "/", // Página inicial 
     element: <Login />,
   },
   {
-    path: "/pedidos",  // Caminho para Pedidos
-    element: <Orders />,
+    path: "/home", // Caminho para Login
+    element: localStorage.getItem('isLoggedIn') === 'true' ? <Home /> : <Navigate to="/" replace />,  
+  },
+  {
+    path: "/orders",  // Caminho para Pedidos
+    element: localStorage.getItem('isLoggedIn') === 'true' ? <Orders /> : <Navigate to="/" replace />,
   },
   {
     path: "/list-orderspay",  // Caminho para a página de pagamentos
-    element: <ViewTbPay />,
+    element: localStorage.getItem('isLoggedIn') === 'true' ? <ViewTbPay /> : <Navigate to="/" replace />,
   },
   {
     path: "/sign-in",  // Caminho para a página de registro

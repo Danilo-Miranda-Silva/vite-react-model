@@ -6,6 +6,8 @@ import { TableData } from "../orders/types";
 import { ModalPay } from "../ViewPay/modalPay";
 import logo from '../../../assets/logo_pedrao_vazado.png';
 import '../orders/pedidos.css';
+import { UserName } from "../components/userName";
+import { BtnLougauth } from "../components/btnLogauth";
 
 const ViewPay = () => {
   const [pedidoSelecionado, setPedidoSelecionado] = useState<TableData | null>(null);
@@ -48,7 +50,11 @@ const ViewPay = () => {
               <td className={dado.statuspay === 'Não Pago' ? 'nao-pago' : ''}>
                 {dado.statuspay}
               </td>
-              <td>{dado.total}</td>
+              <td>R$ {new Intl.NumberFormat('pt-BR', {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2
+                }).format(dado.total)}
+              </td>
               <td className="td-btn">
                 <button className="ct-btn-table" onClick={() => setPedidoSelecionado(dado)}>
                   Ver Detalhes
@@ -65,11 +71,18 @@ const ViewPay = () => {
 };
 export function ViewTbPay() {
   return (
-    <div className="container-table">
-      <h1 className="title-table">
-      <img src={logo} alt="Logo do Restaurante" className="logo-restaurante" />
-      </h1>
-      <ViewPay />
-    </div>
+    <>
+     <header className="ct-header">
+        <div className="logo">
+          <img src={logo} alt="Logo do Restaurante" className="logo-restaurante" />
+        </div>
+        <UserName />
+        <BtnLougauth />
+      </header>
+      <div className="container-table">
+        <ViewPay />
+      </div>
+    </>
+    
   );
 }

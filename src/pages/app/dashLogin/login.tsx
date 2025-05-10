@@ -21,9 +21,11 @@ export function Login() {
             email: username,
             password: password
         });  
-        
+        console.log('Resposta da API:', resp.data); // 👈 Verifique aqui
         if(resp.data.user.success === true){
-            navigate('/pedidos');
+            localStorage.setItem('isLoggedIn', resp.data.user.success);
+            localStorage.setItem('userName', resp.data.user.user.name);
+            window.location.href = '/home';
         } else {
             navigate('*');
         }
@@ -44,20 +46,7 @@ export function Login() {
                     <input type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} />
                         <FaLock className="icon" />
                 </div>
-
-                <div className="recall-forget">
-                    <label>
-                        <input type="checkbox" />
-                            Lembra de mim
-                    </label>
-                    <div>
-                        <a href="#">Esqueceu a senha?</a>
-                    </div>
-                </div>
                 <button>Entrar</button>
-                <div className="signup-link">
-                    <p>Não tem uma conta? <a href="#">Registrar</a></p>
-                </div>
                 <div className='error'></div>
             </form>
         </div>

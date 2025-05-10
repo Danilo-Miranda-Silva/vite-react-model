@@ -4,28 +4,27 @@ body, html {
     padding: 0;
 
 }
+header.ct-header {
+    width: 100%;
+    height:204px;
+    background-color: #121214;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .logo-restaurante {
-    position:absolute;
-    top: 40px;
-    left: 650px;
-    width: 190px; /* ajuste conforme necessário */
-    height: auto;
-    z-index: 1000;
-    padding: 10px;
+    width: 100%;
     background-color: #121214;
 }
 
 
 .title-table {
-    text-align: center;
-    margin-bottom: 80px;
 
 }
 .container-table {
     background-color: #121214;
     min-height: 100vh;
-    margin-top: 120px;
     padding: 30px 0;
     font-family: 'Inter', sans-serif;
 }
@@ -56,7 +55,6 @@ body, html {
     color: #e1e1e6;
 }
 
-
 .p-order{
     text-align:left;
     padding: 7px;
@@ -68,6 +66,7 @@ body, html {
 .delOrders{
     text-align: center;
     color: #ff0000;
+    text-shadow: 4px 4px 15px black;
     font-weight: 800;
 }
 .ct-btn{
@@ -159,17 +158,14 @@ body, html {
     border-collapse: collapse;
     border-radius: 8px;
     overflow: hidden;
-     
-    /*box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;*/
-      
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .ct-table td:last-child, .ct-table th:last-child {
-    text-align: left;   /* Alinha o conteúdo da última coluna a esquerda */
-    width: 280px;         /* Ajusta a largura da última coluna */
-    padding: 10px;        /* Ajusta o padding da última coluna */
+    text-align: left;  
+    width: 280px;         
+    padding: 12px;
   }
-
 
 .ct-table thead {
     background-color: #202024;
@@ -189,12 +185,11 @@ body, html {
 }
 
 .ct-table tbody{
-    /*background-color: #28282d;*/  
+    background-color: #28282d;  
     color: #c4c4cc;
     fontSize: 14px;
 }
 .ct-table tbody tr:hover {
-    background-color: #43434a;
 }
 
 .ct-table tbody td{
@@ -204,13 +199,12 @@ body, html {
 }
 .td-btn{
     display: flex;
-    justify-content: left;
-    text-align: left;
+    justify-content: center;
     align-items: left; 
     gap: 4px;
 }
 .ct-btn-table{
-    padding: 8px 16px;
+    padding: 8px 12px;
     border-radius: 7px;
     background-color: #C70000 ;
     color: white;
@@ -218,7 +212,6 @@ body, html {
     cursor: pointer;
     margin-left: 5px;
 }
-
 .btn-del {
     display: flex;
     align-items: left;

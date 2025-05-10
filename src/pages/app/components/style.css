@@ -1,0 +1,32 @@
+button.btn-logout {
+    width: 92px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 8px;
+    outline: none;
+    right: 4px;
+    position: absolute;
+    top: 92px;
+    border-radius: 4px;
+    color: wheat;
+    cursor: pointer;
+    background-color: #28282d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.userName {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px;
+    right: 4px;
+    position: absolute;
+    top: 4px;
+    border-radius: 4px;
+}
