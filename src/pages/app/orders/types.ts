@@ -11,7 +11,7 @@ export interface TableData {
     waiter: string;
     table: string;
     order: OrderItem[];
-    createdAt: Date;
+    createdAt: string;
     status: string;
     statuspay: string;
     total: number;

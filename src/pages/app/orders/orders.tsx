@@ -53,7 +53,7 @@ const Tabela = () => {
             {ordenarPedidos(dados).map((dado, index) => (
             <tr key={index}>
               <td>{new Date(dado.createdAt).toLocaleDateString('pt-BR')}</td>
-              <td>{new Date(dado.createdAt).toLocaleTimeString('pt-BR')}</td>
+              <td>{new Date(dado.createdAt).toISOString().split('T')[1].slice(0, 8)}</td>
               <td>PD-{dado.id}</td>
               <td>{dado.table}</td>
               <td>{ dado.waiter}</td>
